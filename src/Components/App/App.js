@@ -82,12 +82,12 @@ class App extends Component {
               exact
               path={'/'}
               componenet={Header}
-            />
+            /> 
             <PublicOnlyRoute
               path={'/login'}
               component={SignInPage}
             />
-            <Route
+            <PublicOnlyRoute
               path={'/signup'}
               component={SignUpPage}
             />
@@ -95,23 +95,23 @@ class App extends Component {
               path={'/firstview'}
               componenet={FirstView}
             />
-            <Route
+            <PrivateRoute
               path={'/groupselection'}
               componenet={GroupSelection}
             />
-            <Route
+            <PrivateRoute
               path={'/addproject'}
               componenet={ProjectAdd}
             />
-            <Route
+            <PrivateRoute
               path={'/viewproject'}
               componenet={ProjectView}
             />
-            <Route
+            <PrivateRoute
               path={'/singlelist'}
               componenet={SingleList}
             />
-            <Route
+            <PrivateRoute
               path={'/addtype'}
               componenet={TypeAdd}
             />
