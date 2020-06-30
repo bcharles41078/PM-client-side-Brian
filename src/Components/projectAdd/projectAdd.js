@@ -4,6 +4,9 @@ class ProjectAdd extends Component {
     render() {
         return (
             <section id='single' class='sectionProjects'>
+                <button className='static-button button'
+                onClick={e=>console.log('Log Off')}
+                >Log Off</button>
                 <h2>Add a Project</h2>
                 <form type='Submit'>
                     <div>

@@ -4,45 +4,51 @@ import Header from '../Header/header'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LandingPage from '../landingPage/landingPage'
-import SignInPage from '../signInPage/signInPage'
-import SignUpPage from '../signUpPage/singUpPage'
+// import SignInPage from '../signInPage/signInPage'
+// import SignUpPage from '../signUpPage/singUpPage'
 import FirstView from '../firstView/firstView'
 import ProjectAdd from '../projectAdd/projectAdd'
 import ProjectView from '../projectView/projectView'
 import TypeAdd from '../typeAdd/typeAdd'
 import SingleList from '../singleList/singleList'
 import GroupSelection from '../groupSelection/groupSelection'
+
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 // import ApiContext from '../../context/ApiContext'
 // import config from '../../config'
 import './App.css'
 
 class App extends Component {
 
+
   render() {
     return (
       <div className='App'>
         <header className='App__header'>
-          <Header />
-          <LandingPage />
-        </header>
-        <main className='App__main'>
-          <Switch>
+          
             <Route
               exact
               path={'/'}
-              componenet={Header}
+              component={Header}
             />
-            <PublicOnlyRoute
-              path={'/landing_page'}
+            <Route
+              exact
+              path={'/'}
               component={LandingPage}
             />
-            <PublicOnlyRoute
+        </header>
+        <main className='App__main'>
+          <Switch>
+            
+            <Route
               path={'/login'}
-              component={SignInPage}
+              component={LoginPage}
             />
-            <PublicOnlyRoute
+            <Route
               path={'/signup'}
-              component={SignUpPage}
+              component={RegistrationPage}
             />
             <PrivateRoute
               path={'/firstview'}
@@ -60,13 +66,16 @@ class App extends Component {
               path={'/viewproject'}
               componenet={ProjectView}
             />
-            <PrivateRoute
+            <Route
               path={'/singlelist'}
               componenet={SingleList}
             />
             <PrivateRoute
               path={'/addtype'}
               componenet={TypeAdd}
+            />
+            <Route
+              component={NotFoundPage}
             />
           </Switch>
         </main>

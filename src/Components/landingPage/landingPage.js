@@ -6,14 +6,14 @@ class LandingPage extends Component {
     render() {
         return (
             <>
-                <button className='front-buttons button'
-                    onClick={e => console.log('Sign Up')}
-                >Sign Up</button>
+                <Link className='front-buttons button'
+                to='/signup'>
+                Sign Up</Link>
 
 
                 <Link className='front-buttons button'
-                    to='/login'
-                >Log In</Link>
+                    to='/login'>
+                Log In</Link>
 
 
             </>
