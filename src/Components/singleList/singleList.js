@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TokenService from '../../services/token-service'
 
-class SingleList extends Component {
+export default class SingleList extends Component {
 
     render() {
 
@@ -31,4 +31,3 @@ class SingleList extends Component {
     }
 }
 
-export default SingleList;

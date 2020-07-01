@@ -29,7 +29,6 @@ class App extends Component {
         <header className='App__header'>
           
             <Route
-              exact
               path={'/'}
               component={Header}
             />
@@ -52,27 +51,27 @@ class App extends Component {
             />
             <PrivateRoute
               path={'/firstview'}
-              componenet={FirstView}
+              component={FirstView}
             />
             <PrivateRoute
               path={'/groupselection'}
-              componenet={GroupSelection}
+              component={GroupSelection}
             />
             <PrivateRoute
               path={'/addproject'}
-              componenet={ProjectAdd}
+              component={ProjectAdd}
             />
             <PrivateRoute
               path={'/viewproject'}
-              componenet={ProjectView}
+              component={ProjectView}
             />
             <Route
               path={'/singlelist'}
-              componenet={SingleList}
+              component={SingleList}
             />
             <PrivateRoute
               path={'/addtype'}
-              componenet={TypeAdd}
+              component={TypeAdd}
             />
             <Route
               component={NotFoundPage}
