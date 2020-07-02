@@ -49,19 +49,19 @@ class App extends Component {
               path={'/signup'}
               component={RegistrationPage}
             />
-            <PrivateRoute
+            <Route
               path={'/firstview'}
               component={FirstView}
             />
-            <PrivateRoute
+            <Route
               path={'/groupselection'}
               component={GroupSelection}
             />
-            <PrivateRoute
+            <Route
               path={'/addproject'}
               component={ProjectAdd}
             />
-            <PrivateRoute
+            <Route
               path={'/viewproject'}
               component={ProjectView}
             />
@@ -69,7 +69,7 @@ class App extends Component {
               path={'/singlelist'}
               component={SingleList}
             />
-            <PrivateRoute
+            <Route
               path={'/addtype'}
               component={TypeAdd}
             />
