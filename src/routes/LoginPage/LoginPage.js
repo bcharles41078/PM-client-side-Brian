@@ -10,10 +10,10 @@ export default class LoginPage extends Component {
     },
   }
 
-  handleLoginSuccess = () => {
+  onLoginSuccess = () => {
     const { location, history } = this.props
-    const destination = (location.state || {}).from || '/'
-    history.push(destination)
+    //const destination = (location.state || {}).from || '/'
+    history.push('/firstView')
   }
 
   render() {
@@ -21,7 +21,7 @@ export default class LoginPage extends Component {
       <Section className='LoginPage'>
         <h2>Login</h2>
         <LoginForm
-          onLoginSuccess={this.handleLoginSuccess}
+          onLoginSuccess={this.onLoginSuccess}
         />
       </Section>
     )

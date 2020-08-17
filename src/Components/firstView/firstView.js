@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { API_ENDPOINT } from '../../config'
+import config from '../../config'
+import { Link } from 'react-router-dom'
+const { API_ENDPOINT } = config
 
 class FirstView extends Component {
     constructor(props) {
@@ -12,19 +14,23 @@ class FirstView extends Component {
 
     componentDidMount() {
         console.log(API_ENDPOINT)
-        return fetch(`${API_ENDPOINT}/api/projects/?type_id=1&user_id=1`)
+        return fetch(`${API_ENDPOINT}/projects/?type_id=1&user_id=15`)
             .then(res => res.json())
-            .then(data => data.message)
-            .then(projects => this.setState({ projects }))
+            .then(data => this.setState({ projects: data.message }))
+            .then(projects => console.log(this.state.projects))
     }
-    
+
     render() {
         console.log(this.state)
         return (
             <>
                 <section className='buttons'>
-                    <button>Add project</button>
-                    <button>Add type</button>
+                    <Link className='project-type button'
+                        to='/addproject'>
+                        Add project</Link>
+                    <Link className='project-type button'
+                        to='/addtype'>
+                        Add type</Link>
                 </section>
                 <p projects={this.state.projects} />
                 {/* <section id='work' className='sectionProjects'>

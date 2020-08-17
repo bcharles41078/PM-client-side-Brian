@@ -1,4 +1,9 @@
-.button {
-    width: 25%;
-    border-bottom: 5px;
+.button{
+    padding-top: 5vw;
+    font-size: calc(15px + 2vmin);;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
 }

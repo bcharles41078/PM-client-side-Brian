@@ -1,0 +1,15 @@
+.addProjectForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputAdd{
+    scroll-padding-bottom: 5vw;
+}
+
+.addProject{
+    margin-top: 5vw;
+    font-size: 125%;
+}

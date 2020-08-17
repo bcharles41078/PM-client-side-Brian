@@ -27,20 +27,21 @@ class App extends Component {
     return (
       <div className='App'>
         <header className='App__header'>
-          
-            <Route
-              path={'/'}
-              component={Header}
-            />
+
+          <Route
+            path={'/'}
+            component={Header}
+          />
+
+        </header>
+        <main className='App__main'>
+          <Switch>
             <Route
               exact
               path={'/'}
               component={LandingPage}
             />
-        </header>
-        <main className='App__main'>
-          <Switch>
-            
+
             <Route
               path={'/login'}
               component={LoginPage}
@@ -53,27 +54,27 @@ class App extends Component {
               path={'/firstview'}
               component={FirstView}
             />
-            <Route
+            <PrivateRoute
               path={'/groupselection'}
               component={GroupSelection}
             />
-            <Route
+            <PrivateRoute
               path={'/addproject'}
               component={ProjectAdd}
             />
-            <Route
+            <PrivateRoute
               path={'/viewproject'}
               component={ProjectView}
             />
-            <Route
+            <PrivateRoute
               path={'/singlelist'}
               component={SingleList}
             />
-            <Route
+            <PrivateRoute
               path={'/addtype'}
               component={TypeAdd}
             />
-            <Route
+            <PublicOnlyRoute
               component={NotFoundPage}
             />
           </Switch>
