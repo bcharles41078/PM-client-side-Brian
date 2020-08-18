@@ -10,7 +10,7 @@ const UserContext = React.createContext({
   clearError: () => {},
   setUser: () => {},
   processLogin: () => {console.log('hi')},
-  processLogout: () => {console.log('bye')},
+  processLogout: () => {},
 })
 
 export default UserContext;
@@ -63,13 +63,14 @@ export class UserProvider extends Component {
   }
 
   processLogout = () => {
-    TokenService.clearAuthToken()
-    TokenService.clearCallbackBeforeExpiry()
+    console.log("logout running in user context")
+    TokenService.clearAuthToken() 
     IdleService.unRegisterIdleResets()
     this.setUser({})
   }
 
   logoutBecauseIdle = () => {
+    
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()
     IdleService.unRegisterIdleResets()

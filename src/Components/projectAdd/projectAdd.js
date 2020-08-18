@@ -47,13 +47,46 @@ class ProjectAdd extends Component {
 
     }
     
+    getMinDate = () => {
+        let MinDate = new Date();
+        let dd = MinDate.getDate();
+        let mm = MinDate.getMonth()+1;
+        let yyyy = MinDate.getFullYear();
+
+        if (dd<10){
+            dd='0' +dd
+        }
+        if (mm<10){
+            mm='0' +mm
+        }
+
+        MinDate = yyyy+'-'+mm+'-'+dd;
+        
+        return MinDate;
+    }
+
+    getMaxDate = () => {
+        let MaxDate = new Date();
+        let dd = MaxDate.getDate()-1;
+        let mm = MaxDate.getMonth()+1;
+        let yyyy = MaxDate.getFullYear()+5;
+
+        if (dd<10){
+            dd='0' +dd
+        }
+        if (mm<10){
+            mm='0' +mm
+        }
+
+        MaxDate = yyyy+'-'+mm+'-'+dd;
+        
+        return MaxDate;
+    }
+
     render() {
         return (
             <section id='single' className='sectionProjects'>
-                <button className='static-button button'
-                onClick={e=> {TokenService.clearAuthToken
-                    history.push('/login')}}
-                >Log Off</button>
+                
                 <h2>Add a Project</h2>
                 <form className='addProjectForm' type='Submit'onSubmit={(ev) => this.handleSubmit(ev)}>
                     
@@ -63,15 +96,10 @@ class ProjectAdd extends Component {
                         <label htmlFor="desc">Project Description</label>
                         <input className='inputAdd' id='desc' type="text" />
                     
-                        <label htmlFor="dateAdded">Date Added</label>
-                        <input className='inputAdd' id='dateAdded' type="text" />
-                    
-                        <label htmlFor='dateDue'>Due Date</label>
-                        <input className='inputAdd' id='dateDue' type="text" />
-                    
-                        <label htmlFor="projectType">Project Type</label>
-                        <input className='inputAdd' id='projectType' type="text" />
-                    
+                        <label htmlFor='dateDue'>Due Date:</label>
+                        <input className='inputAdd' id='due-date' type="date"
+                            min={this.getMinDate()} max={this.getMaxDate()}/>
+                
                         <label htmlFor="priority">Priority</label>
                         <input className='inputAdd' id='priority' type="text" />
                     

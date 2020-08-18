@@ -1,0 +1,23 @@
+.detail-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1.5px solid black;
+    border-radius: 15px; 
+    width: 60vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    align-items: center;
+    background-color: white;
+}
+
+.detail-box{
+    width: 80%;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+

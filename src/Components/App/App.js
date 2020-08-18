@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Header from '../Header/header'
+import Header from '../Header/Header'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LandingPage from '../landingPage/landingPage'
@@ -16,25 +16,37 @@ import GroupSelection from '../groupSelection/groupSelection'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import TokenService from '../../services/token-service'
+import { UserProvider } from '../../context/UserContext';
+import services from '../../services/auth-api-service'
 // import ApiContext from '../../context/ApiContext'
 // import config from '../../config'
 import './App.css'
 
 class App extends Component {
 
+  state = {
+    user: {},
+    loggedIn: false
+  };
+
+  toggleLoggedIn = () => {
+    this.setState({ loggedIn: !this.state.loggedIn });
+  };
+
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) {
+      this.toggleLoggedIn();
+    }
+  }
 
   render() {
     return (
+      <UserProvider>
       <div className='App'>
-        <header className='App__header'>
-
-          <Route
-            path={'/'}
-            component={Header}
-          />
-
-        </header>
+        <Header toggleLoggedIn={this.toggleLoggedIn}/>
         <main className='App__main'>
+          <img id='pm-pic' src='ProjectManagementPic.png' alt='PMpic'></img>
           <Switch>
             <Route
               exact
@@ -44,6 +56,7 @@ class App extends Component {
 
             <Route
               path={'/login'}
+              toggleLoggedIn={this.toggleLoggedIn}
               component={LoginPage}
             />
             <Route
@@ -80,6 +93,7 @@ class App extends Component {
           </Switch>
         </main>
       </div>
+      </UserProvider>
     )
   }
 }
