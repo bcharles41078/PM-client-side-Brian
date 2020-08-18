@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import './projectAdd.css'
+import TokenService from '../../services/token-service'
 
 class ProjectAdd extends Component {
+    static defaultProps = {
+        location: {},
+        history: {
+          push: () => {},
+        },
+      }
 
     handleSubmit = ev => {
         ev.preventDefault()
@@ -12,7 +19,7 @@ class ProjectAdd extends Component {
            project_description: ev.target.querySelector('#desc').value,
            due_date: ev.target.querySelector('#dateDue').value,
            list_id: 1,
-           user_id: 16
+           
         }
         console.log(data)
 
@@ -21,6 +28,7 @@ class ProjectAdd extends Component {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify(data)
         })
@@ -43,7 +51,8 @@ class ProjectAdd extends Component {
         return (
             <section id='single' className='sectionProjects'>
                 <button className='static-button button'
-                onClick={e=>console.log('Log Off')}
+                onClick={e=> {TokenService.clearAuthToken
+                    history.push('/login')}}
                 >Log Off</button>
                 <h2>Add a Project</h2>
                 <form className='addProjectForm' type='Submit'onSubmit={(ev) => this.handleSubmit(ev)}>

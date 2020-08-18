@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import { Link } from 'react-router-dom'
+import getAuthToken from '../../services/token-service'
+import Detail from '../projectDetail/projectDetail'
+
 const { API_ENDPOINT } = config
 
 class FirstView extends Component {
@@ -14,10 +17,16 @@ class FirstView extends Component {
 
     componentDidMount() {
         console.log(API_ENDPOINT)
-        return fetch(`${API_ENDPOINT}/projects/?type_id=1&user_id=15`)
+        return fetch(`${API_ENDPOINT}/projects`,
+            {
+                method: 'GET',
+                headers: {
+                    'authorization': `bearer ${getAuthToken.getAuthToken()}`
+                }
+            })
+
             .then(res => res.json())
-            .then(data => this.setState({ projects: data.message }))
-            .then(projects => console.log(this.state.projects))
+            .then(data => this.setState({ projects: data }))
     }
 
     render() {
@@ -32,7 +41,10 @@ class FirstView extends Component {
                         to='/addtype'>
                         Add type</Link>
                 </section>
-                <p projects={this.state.projects} />
+                {this.state.projects.map((project, i) => 
+                    <Detail key = {i} project = {project}/>
+                )}
+
                 {/* <section id='work' className='sectionProjects'>
                     <h2>Work Projects</h2>
                     <ul id='topLeft' className='projectList'>
