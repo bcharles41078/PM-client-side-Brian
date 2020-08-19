@@ -6,7 +6,7 @@ import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LandingPage from '../landingPage/landingPage'
 // import SignInPage from '../signInPage/signInPage'
 // import SignUpPage from '../signUpPage/singUpPage'
-import FirstView from '../firstView/firstView'
+import Dashboard from '../Dashbord/Dashbord'
 import ProjectAdd from '../projectAdd/projectAdd'
 import ProjectView from '../projectView/projectView'
 import SingleList from '../singleList/singleList'
@@ -63,8 +63,8 @@ class App extends Component {
               component={RegistrationPage}
             />
             <Route
-              path={'/firstview'}
-              component={FirstView}
+              path={'/dashboard'}
+              component={Dashboard}
             />
             <PrivateRoute
               path={'/groupselection'}

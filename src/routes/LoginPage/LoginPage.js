@@ -13,7 +13,7 @@ export default class LoginPage extends Component {
   onLoginSuccess = () => {
     const { location, history } = this.props
     //const destination = (location.state || {}).from || '/'
-    history.push('/firstView')
+    history.push('/dashboard')
   }
 
   render() {
