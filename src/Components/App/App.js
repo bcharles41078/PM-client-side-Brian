@@ -59,7 +59,7 @@ class App extends Component {
               component={LoginPage}
             />
             <Route
-              path={'/signup'}
+              path={'/register'}
               component={RegistrationPage}
             />
             <Route

@@ -10,7 +10,7 @@ class LandingPage extends Component {
         return (
             <div className='links'>
                 <Link className='front-buttons button'
-                to='/signup'>
+                to='/register'>
                 Sign Up</Link>
 
 
