@@ -28,7 +28,7 @@ const ProjectApiService = {
             )
     },
 
-    postProject(user_id, project_title, project_description, due_date, list_id) {
+    postProject(user_id, project_title, project_description, due_date) {
         return fetch(`${config.API_ENDPOINT}/projects/${user_id}`, {
             method: 'POST',
             headers: {
@@ -40,7 +40,6 @@ const ProjectApiService = {
                 project_title,
                 project_description,
                 due_date,
-                list_id,
             }),
         })
             .then(res =>

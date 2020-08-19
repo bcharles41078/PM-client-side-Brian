@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LoginForm from '../../Components/signInPage/signInPage'
+import LoginForm from '../../Components/LoginForm/LoginForm'
 import { Section } from '../../Components/Utils/Utils'
 
 export default class LoginPage extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Section } from '../../Components/Utils/Utils'
-import RegistrationForm from '../../Components/signUpPage/singUpPage'
+import RegistrationForm from '../../Components/RegistrationForm/RegistrationForm'
 
 export default class RegistrationPage extends Component {
   static defaultProps = {
@@ -10,6 +10,7 @@ export default class RegistrationPage extends Component {
   }
 
   handleRegistrationSuccess = user => {
+    console.log('register')
     const { history } = this.props
     history.push('/login')
   }

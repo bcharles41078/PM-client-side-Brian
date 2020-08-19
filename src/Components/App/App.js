@@ -9,7 +9,6 @@ import LandingPage from '../landingPage/landingPage'
 import FirstView from '../firstView/firstView'
 import ProjectAdd from '../projectAdd/projectAdd'
 import ProjectView from '../projectView/projectView'
-import TypeAdd from '../typeAdd/typeAdd'
 import SingleList from '../singleList/singleList'
 import GroupSelection from '../groupSelection/groupSelection'
 
@@ -83,10 +82,7 @@ class App extends Component {
               path={'/singlelist'}
               component={SingleList}
             />
-            <PrivateRoute
-              path={'/addtype'}
-              component={TypeAdd}
-            />
+           
             <PublicOnlyRoute
               component={NotFoundPage}
             />

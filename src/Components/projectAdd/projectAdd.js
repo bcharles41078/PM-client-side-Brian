@@ -17,8 +17,7 @@ class ProjectAdd extends Component {
         const data = {
            project_title: ev.target.querySelector('#name').value,
            project_description: ev.target.querySelector('#desc').value,
-           due_date: ev.target.querySelector('#dateDue').value,
-           list_id: 1,
+           due_date: ev.target.querySelector('#due-date').value
            
         }
         console.log(data)
@@ -34,16 +33,14 @@ class ProjectAdd extends Component {
         })
             .then(response => response.json())
             .then(data => {
-            const { history } = this.props       
+                const { history } = this.props 
+                console.log(history)
+                history.push('/firstView')
         })
             // go back to main page
             
-            //console.log(history)
-            // history.push('/firstView')
 
-            .catch((e) => {
-                console.log(e);
-            })
+            .catch(e => console.log(e))
 
     }
     
