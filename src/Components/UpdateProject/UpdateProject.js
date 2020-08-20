@@ -86,13 +86,13 @@ class UpdateProject extends Component {
                 title.value = ''
                 desc.value = ''
                 dateDue.value = ''
+                // go back to dashboard
+                this.props.history.push('./dashboard')
             })
             .catch(res => {
                 this.setState({ error: res.error })
             })
-        // go back to dashboard
-        const { history } = this.props
-        history.push('./dashboard')
+        
     }
 
     render() {

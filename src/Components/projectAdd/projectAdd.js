@@ -7,11 +7,19 @@ import { Button, Input } from '../Utils/Utils'
 const { API_ENDPOINT } = config
 
 class ProjectAdd extends Component {
-    static defaultProps = {
-        location: {},
-        history: {
-            push: () => { },
-        },
+    constructor(props) {
+        super(props)
+    }
+    // static defaultProps = {
+    //     location: {},
+    //     history: {
+    //         push: () => { },
+    //     },
+    // }
+
+    onUpdateSuccess = () => {
+        console.log(this.props.history)
+        this.props.history.push('./dashboard')
     }
 
     handleSubmit = ev => {
@@ -25,7 +33,7 @@ class ProjectAdd extends Component {
 
         }
 
-
+console.log(data)
         fetch(`${API_ENDPOINT}/projects`, {
             method: 'POST',
             headers: {
@@ -34,14 +42,14 @@ class ProjectAdd extends Component {
             },
             body: JSON.stringify(data)
         })
-            .then(response => response.json())
-                const { history } = this.props
-                history.push('/dashboard')
-                
-            .then(data => {
-                
-                
-            })
+            .then(response => { 
+                console.log('posting', response.ok)
+                if (response.ok) {
+                    //this.onUpdateSuccess()
+                    this.props.history.push('./dashboard')
+                }
+            }) 
+            
             .catch(e => console.log(e))
     }
     
@@ -83,6 +91,7 @@ class ProjectAdd extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <section id='add_project' className='addProjects'>
 

@@ -42,10 +42,11 @@ class Dashboard extends Component {
     handleUpdateProject = (detail_id, projects = this.state.projects) => {
         const project = projects.find(project=>project.id===detail_id)
         const { history } = this.props
-    
         this.props.setProjectState(project)
         history.push('./updateproject')
     }
+
+   
 
     handleDeleteProject = (detail_id) => {
         fetch(`${config.API_ENDPOINT}/projects`, {
@@ -75,7 +76,8 @@ class Dashboard extends Component {
                         Add project</Link>
                 </section>
                 {this.state.projects.map((project, i) =>
-                    <Detail key={i} project={project} handleUpdateProject={this.handleUpdateProject}
+                    <Detail key={i} project={project}  
+                    handleUpdateProject={this.handleUpdateProject}
                     handleDeleteProject={this.handleDeleteProject} />
                 )}
 

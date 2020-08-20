@@ -33,6 +33,8 @@ class App extends Component {
     
   }
 
+  
+
   toggleLoggedIn = () => {
     this.setState({ loggedIn: !this.state.loggedIn });
   };
@@ -44,7 +46,7 @@ class App extends Component {
   }
 
   render() {
-    
+    console.log(this.history)
     return (
       <UserProvider>
       <div className='App'>
@@ -70,13 +72,13 @@ class App extends Component {
             <Route
               path='/dashboard'>
 
-                <Dashboard history={this.history} setProjectState={this.setProjectState} />
+                <Dashboard setProjectState={this.setProjectState} />
               </Route>
 
-            <PrivateRoute
-              path={'/addproject'}
-              component={ProjectAdd}
-            />
+            <Route
+              path={'/addproject'}>
+              <ProjectAdd history={this.history} test={'test value'} />
+            </Route>
             <PrivateRoute
               path={'/updateproject'}
               component= {() => <UpdateProject history={this.history} project={this.state.project}/>}
