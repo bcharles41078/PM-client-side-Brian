@@ -64,7 +64,7 @@ class Dashboard extends Component {
                 }
             })
             
-            .catch(e => console.log(e))
+            .catch(e => alert(e.error))
     }
 
     render() {

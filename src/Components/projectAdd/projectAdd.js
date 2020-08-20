@@ -3,25 +3,12 @@ import './projectAdd.css'
 import TokenService from '../../services/token-service'
 import config from '../../config'
 import { Button, Input } from '../Utils/Utils'
+import { withRouter } from 'react-router-dom';
 
 const { API_ENDPOINT } = config
 
 class ProjectAdd extends Component {
-    constructor(props) {
-        super(props)
-    }
-    // static defaultProps = {
-    //     location: {},
-    //     history: {
-    //         push: () => { },
-    //     },
-    // }
-
-    onUpdateSuccess = () => {
-        console.log(this.props.history)
-        this.props.history.push('./dashboard')
-    }
-
+    
     handleSubmit = ev => {
         ev.preventDefault()
         // const data = ev.firstChild.control.value
@@ -32,8 +19,6 @@ class ProjectAdd extends Component {
             due_date: ev.target.querySelector('#due-date').value
 
         }
-
-console.log(data)
         fetch(`${API_ENDPOINT}/projects`, {
             method: 'POST',
             headers: {
@@ -43,14 +28,13 @@ console.log(data)
             body: JSON.stringify(data)
         })
             .then(response => { 
-                console.log('posting', response.ok)
                 if (response.ok) {
                     //this.onUpdateSuccess()
                     this.props.history.push('./dashboard')
                 }
             }) 
             
-            .catch(e => console.log(e))
+            .catch(e => alert(e.error))
     }
     
     
@@ -91,7 +75,6 @@ console.log(data)
     }
 
     render() {
-        console.log(this.props)
         return (
             <section id='add_project' className='addProjects'>
 
@@ -132,4 +115,5 @@ console.log(data)
         )
     }
 }
-export default ProjectAdd
+
+export default withRouter(ProjectAdd)

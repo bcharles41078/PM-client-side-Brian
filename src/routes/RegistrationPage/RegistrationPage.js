@@ -11,7 +11,6 @@ export default class RegistrationPage extends Component {
   }
 
   handleRegistrationSuccess = user => {
-    console.log('register')
     const { history } = this.props
     history.push('/login')
   }

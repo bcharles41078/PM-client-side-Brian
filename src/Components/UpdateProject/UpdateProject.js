@@ -5,9 +5,7 @@ import { Button, Input } from '../Utils/Utils'
 import './UpdateProject.css'
 
 class UpdateProject extends Component {
-    constructor(props) {
-        super(props)
-    }
+    
 
     getMinDate = () => {
         let MinDate = new Date();
@@ -29,7 +27,7 @@ class UpdateProject extends Component {
 
     getMaxDate = () => {
         let MaxDate = new Date();
-        let dd = MaxDate.getDate() - 1;
+        let dd = MaxDate.getDate() + 1;
         let mm = MaxDate.getMonth() + 1;
         let yyyy = MaxDate.getFullYear() + 5;
 
@@ -48,7 +46,7 @@ class UpdateProject extends Component {
     getDateValue = () => {
 
         let myDate = new Date(this.props.project.due_date);
-        let dd = myDate.getDate();
+        let dd = myDate.getDate() + 1;
         let mm = myDate.getMonth() + 1;
         let yyyy = myDate.getFullYear();
 

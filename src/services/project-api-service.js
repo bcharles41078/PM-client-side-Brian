@@ -68,7 +68,7 @@ const ProjectApiService = {
                 new alert(res.message)
                }
             })
-            .catch(error => console.log(error))
+            .catch(error => alert(error.error))
     },
     
 
