@@ -8,16 +8,13 @@ import LandingPage from '../landingPage/landingPage'
 // import SignUpPage from '../signUpPage/singUpPage'
 import Dashboard from '../Dashbord/Dashbord'
 import ProjectAdd from '../projectAdd/projectAdd'
-import ProjectView from '../projectView/projectView'
-import SingleList from '../singleList/singleList'
-import GroupSelection from '../groupSelection/groupSelection'
+import UpdateProject from '../UpdateProject/UpdateProject'
 
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import TokenService from '../../services/token-service'
 import { UserProvider } from '../../context/UserContext';
-import services from '../../services/auth-api-service'
 // import ApiContext from '../../context/ApiContext'
 // import config from '../../config'
 import './App.css'
@@ -26,8 +23,15 @@ class App extends Component {
 
   state = {
     user: {},
-    loggedIn: false
+    loggedIn: false,
+    project: {}
+    
   };
+
+  setProjectState = (project) => {
+    this.setState({project: project});
+    
+  }
 
   toggleLoggedIn = () => {
     this.setState({ loggedIn: !this.state.loggedIn });
@@ -40,6 +44,7 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <UserProvider>
       <div className='App'>
@@ -63,26 +68,19 @@ class App extends Component {
               component={RegistrationPage}
             />
             <Route
-              path={'/dashboard'}
-              component={Dashboard}
-            />
-            <PrivateRoute
-              path={'/groupselection'}
-              component={GroupSelection}
-            />
+              path='/dashboard'>
+
+                <Dashboard history={this.history} setProjectState={this.setProjectState} />
+              </Route>
+
             <PrivateRoute
               path={'/addproject'}
               component={ProjectAdd}
             />
             <PrivateRoute
-              path={'/viewproject'}
-              component={ProjectView}
+              path={'/updateproject'}
+              component= {() => <UpdateProject history={this.history} project={this.state.project}/>}
             />
-            <PrivateRoute
-              path={'/singlelist'}
-              component={SingleList}
-            />
-           
             <PublicOnlyRoute
               component={NotFoundPage}
             />

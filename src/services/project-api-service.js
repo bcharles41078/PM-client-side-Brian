@@ -49,6 +49,29 @@ const ProjectApiService = {
             )
     },
 
+    updateProject(detail_id, project_title, project_description, due_date) {
+        return fetch(`${config.API_ENDPOINT}/projects`, {
+            method: 'PATCH',
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                detail_id,
+                project_title,
+                project_description,
+                due_date,
+            }),
+        })
+            .then(res => {
+               if (!res.ok){
+                new alert(res.message)
+               }
+            })
+            .catch(error => console.log(error))
+    },
+    
+
     deleteProject(user_id, detail_id) {
         return fetch(`${config.API_ENDPOINT}/projects/${user_id}/:?${detail_id}`, {
             method: 'DELETE',
@@ -62,4 +85,6 @@ const ProjectApiService = {
                     : res.json()
             )
     },
-} 
+}
+
+export default ProjectApiService;

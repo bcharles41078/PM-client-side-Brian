@@ -1,0 +1,15 @@
+#update_project{
+    margin-top: 20vw;
+}
+
+@media screen and (min-width: 768px) {
+    #update_project {
+        margin-top: 15vw;
+    }}
+  
+  
+  
+  @media screen and (min-width: 1024px) {
+    #update_project {
+      margin-top: 10vw;
+  }}

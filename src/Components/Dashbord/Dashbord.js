@@ -3,24 +3,30 @@ import config from '../../config'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import Detail from '../projectDetail/projectDetail'
+import { withRouter } from 'react-router-dom';
 
 const { API_ENDPOINT } = config
 
-class FirstView extends Component {
+class Dashboard extends Component {
+    
+       
     constructor(props) {
         super(props)
-        this.state = {
-            projects: []
-        }
+          
+            this.state = {
+                projects: []
+            }
     }
+        
+
+    
+    
 
     componentDidMount() {
-        console.log(API_ENDPOINT)
-        {this.handleGetProjects()}
+        this.handleGetProjects()
     }
 
     handleGetProjects = () => {
-        console.log('getting projects')
         return fetch(`${API_ENDPOINT}/projects`,
             {
                 method: 'GET',
@@ -33,8 +39,15 @@ class FirstView extends Component {
             .then(data => this.setState({ projects: data }))
     }
 
+    handleUpdateProject = (detail_id, projects = this.state.projects) => {
+        const project = projects.find(project=>project.id===detail_id)
+        const { history } = this.props
+    
+        this.props.setProjectState(project)
+        history.push('./updateproject')
+    }
+
     handleDeleteProject = (detail_id) => {
-        console.log('running', detail_id)
         fetch(`${config.API_ENDPOINT}/projects`, {
             method: 'DELETE',
             headers: {
@@ -44,7 +57,7 @@ class FirstView extends Component {
             body: JSON.stringify({ detail_id })
         })
             .then(res => {
-                console.log(res.ok)
+                
                 if (res.ok) {
                     this.handleGetProjects();
                 }
@@ -62,7 +75,8 @@ class FirstView extends Component {
                         Add project</Link>
                 </section>
                 {this.state.projects.map((project, i) =>
-                    <Detail key={i} project={project} handleDeleteProject={this.handleDeleteProject} />
+                    <Detail key={i} project={project} handleUpdateProject={this.handleUpdateProject}
+                    handleDeleteProject={this.handleDeleteProject} />
                 )}
 
 
@@ -71,4 +85,4 @@ class FirstView extends Component {
     }
 }
 
-export default FirstView
+export default withRouter(Dashboard) 

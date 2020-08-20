@@ -22,12 +22,31 @@ main{
 }
 
 #pm-pic{
+  width: 70%;
+  height: 45%;
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
-
+  margin-top: 25vw;
   position: absolute;
   z-index: -300;
   filter: opacity(20%)
 }
+
+@media screen and (min-width: 768px) {
+  #pm-pic {
+      width: 65%;
+      height: 50%;
+      margin-top: 10vw;
+  }}
+
+
+
+@media screen and (min-width: 1024px) {
+  #pm-pic {
+    width: 80%;
+    height: 80%;
+    margin-top: 1vw;
+}}
+  

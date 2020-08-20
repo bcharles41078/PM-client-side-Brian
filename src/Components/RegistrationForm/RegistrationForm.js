@@ -9,34 +9,34 @@ export default class RegistrationForm extends Component {
     onRegistrationSuccess: () => { }
   }
 
-  state = { error: null }
+  state = { error: null, isloading: false}
 
   handleSubmit = ev => {
     ev.preventDefault()
     const { full_name, nick_name, user_name, password } = ev.target
+    this.setState({ error: null, isloading: true })
 
-    this.setState({ error: null })
     AuthApiService.postUser({
       user_name: user_name.value,
       password: password.value,
       full_name: full_name.value,
       nickname: nick_name.value,
     })
-      .then(user => {
-        console.log(user)
-        full_name.value = ''
-        nick_name.value = ''
-        user_name.value = ''
-        password.value = ''
-        console.log('signUpPage')
-        this.props.onRegistrationSuccess()
-      })
-      .catch(res => {
-        this.setState({ error: res.error })
-      })
+    
+    
+      
+      this.props.onRegistrationSuccess()
+    
+       
   }
   render() {
     const { error } = this.state
+    if (this.state.isloading) {
+      return (
+        <h1>Loading...</h1>
+      )
+    }
+
     return (
 
       <form

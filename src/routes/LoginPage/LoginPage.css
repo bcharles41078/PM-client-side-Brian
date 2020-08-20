@@ -1,0 +1,15 @@
+.LoginPage{
+    margin-top: 35vw;
+}
+
+@media screen and (min-width: 768px) {
+    .LoginPage {
+        margin-top: 18vw;
+    }}
+  
+  
+  
+  @media screen and (min-width: 1024px) {
+    .LoginPage {
+      margin-top: 15vw;
+  }}

@@ -6,4 +6,17 @@
 .links{
     display: flex;
     flex-direction: column;
+    margin-top: 35vw;
 }
+
+@media screen and (min-width: 768px) {
+    .links {
+        margin-top: 20vw;
+    }}
+  
+  
+  
+  @media screen and (min-width: 1024px) {
+    .links {
+      margin-top: 10vw;
+  }}

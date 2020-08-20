@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import { Section } from '../../Components/Utils/Utils'
+import './LoginPage.css'
 
 export default class LoginPage extends Component {
   static defaultProps = {
@@ -11,7 +12,7 @@ export default class LoginPage extends Component {
   }
 
   onLoginSuccess = () => {
-    const { location, history } = this.props
+    const { history } = this.props
     //const destination = (location.state || {}).from || '/'
     history.push('/dashboard')
   }

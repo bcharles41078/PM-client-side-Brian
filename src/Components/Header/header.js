@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+import { TiArrowSortedDown } from "react-icons/ti";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
 import "./Header.css";
@@ -21,7 +21,7 @@ const NewHeader = (props) => {
 
     if (!show) {
         return (
-            <div className="arrow-wrapper"><TiArrowSortedDown onMouseOver={() => setShow(true)} className="arrow" /></div>
+            <div className="arrow-wrapper"><TiArrowSortedDown onClick={() => setShow(true)} onMouseOver={() => setShow(true)} className="arrow" /></div>
         )
     }
 
