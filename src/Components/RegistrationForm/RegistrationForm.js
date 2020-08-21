@@ -22,10 +22,13 @@ export default class RegistrationForm extends Component {
       full_name: full_name.value,
       nickname: nick_name.value,
     })
-    
+      .this(res => {
+        this.props.onRegistrationSuccess()
+      })
+      .catch(error => alert(error.error))
     
       
-      this.props.onRegistrationSuccess()
+      
     
        
   }
