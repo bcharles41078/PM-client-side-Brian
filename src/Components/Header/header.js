@@ -19,8 +19,6 @@ const NewHeader = (props) => {
         props.toggleLoggedIn();
     }
 
-
-
     if (!show) {
         return (
             <div className="arrow-wrapper"><TiArrowSortedDown onClick={() => setShow(true)()} onMouseOver={() => setShow(true)} className="arrow" /></div>
