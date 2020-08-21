@@ -23,9 +23,13 @@ export default class RegistrationForm extends Component {
       nickname: nick_name.value,
     })
       .this(res => {
-        this.props.onRegistrationSuccess()
+        if (res.ok) {
+          this.props.onRegistrationSuccess()
+        }
       })
-      .catch(error => alert(error.error))
+      .catch(res => {
+        this.setState({ error: res.error, isloading: false })
+      })
     
       
       
