@@ -15,7 +15,10 @@ const AuthApiService = {
         : res.json()
       )
         
-      .catch(error => alert(error.error))
+      .catch(error => {
+        console.log(error)
+        alert(error.error)
+      })
   },
   postLogin({ user_name, password }) {
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
