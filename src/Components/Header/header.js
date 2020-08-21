@@ -12,6 +12,10 @@ const NewHeader = (props) => {
 
     const context = useContext(UserContext); 
 
+    function timeHeaderOut () {
+        setInterval(function(){ setShow(false)}, 5000);
+
+    }
 
     function handleLogoutClick() {
         context.processLogout();
@@ -19,9 +23,12 @@ const NewHeader = (props) => {
     }
 
 
+
     if (!show) {
         return (
-            <div className="arrow-wrapper"><TiArrowSortedDown onClick={() => setShow(true)} onMouseOver={() => setShow(true)} className="arrow" /></div>
+            <div className="arrow-wrapper"><TiArrowSortedDown onClick={
+                                () => setShow(true),
+                                timeHeaderOut()} onMouseOver={() => setShow(true)} className="arrow" /></div>
         )
     }
 

@@ -42,3 +42,10 @@
     z-index: 300;
 }
 
+.user-name {
+    font-weight: 700;
+    overflow: hidden;
+    max-height: 42px;
+    max-width: 53px;
+    color: black;
+}
