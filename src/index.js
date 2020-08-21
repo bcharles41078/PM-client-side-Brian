@@ -5,7 +5,6 @@ import App from './Components/App/App';
 import { BrowserRouter } from 'react-router-dom';
 // import * as serviceWorker from './';
 require('dotenv').config();
-console.log(process.env)
 
 ReactDOM.render(
   <React.StrictMode>
