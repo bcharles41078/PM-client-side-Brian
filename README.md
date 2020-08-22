@@ -19,4 +19,4 @@
 -   CSS
 -   Express
 
-https://raw.githubusercontent.com/bcharles41078/PM-client-side-Brian/master/screenshots/project-manager-screenshot.PNG
+![project-manager-screenshot](https://user-images.githubusercontent.com/62114382/90963638-17d47300-e47f-11ea-99e6-cfdc9eca443f.PNG)
