@@ -11,6 +11,15 @@ class LandingPage extends Component {
 
         
         return (
+            <>
+            <div className='landingpage'>
+                <h1>Project Management</h1>
+                <p>The Project Management App is there for you to keep track of projects. 
+                 A place you can log all you projects in one place assign due dates you can
+                 edit your projects as you see fit and only you can see your projects. If it 
+                 your first time on the App please create a secure account, otherwise login to 
+                 see your projects.</p>
+            </div>
             <div className='links'>
                 {!TokenService.hasAuthToken()? <>
                 <Link className='front-buttons button'
@@ -28,6 +37,7 @@ class LandingPage extends Component {
                 </>}
 
             </div>
+            </>
         )
     }
 }
