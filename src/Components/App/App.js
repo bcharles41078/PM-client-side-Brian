@@ -30,10 +30,7 @@ class App extends Component {
 
   setProjectState = (project) => {
     this.setState({project: project});
-    
   }
-
-  
 
   toggleLoggedIn = () => {
     this.setState({ loggedIn: !this.state.loggedIn });
@@ -46,6 +43,7 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <UserProvider>
       <div className='App'>

@@ -65,10 +65,10 @@ const ProjectApiService = {
         })
             .then(res => {
                if (!res.ok){
-                alert(res.message)
+                console.log(res)
                }
             })
-            .catch(error => alert(error.error))
+            
     },
     
 

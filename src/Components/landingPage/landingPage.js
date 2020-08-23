@@ -18,7 +18,7 @@ class LandingPage extends Component {
                  A place you can log all you projects in one place assign due dates you can
                  edit your projects as you see fit and only you can see your projects. If it 
                  your first time on the App please create a secure account, otherwise login to 
-                 see your projects.</p>
+                 see your projects. For DEMO use login as demo with password demo</p>
             </div>
             <div className='links'>
                 {!TokenService.hasAuthToken()? <>

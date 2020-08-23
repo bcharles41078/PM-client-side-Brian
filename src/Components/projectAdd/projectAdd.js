@@ -13,6 +13,7 @@ class ProjectAdd extends Component {
         ev.preventDefault()
         // const data = ev.firstChild.control.value
 
+
         const data = {
             project_title: ev.target.querySelector('#name').value,
             project_description: ev.target.querySelector('#desc').value,
@@ -34,10 +35,8 @@ class ProjectAdd extends Component {
                 }
             }) 
             
-            .catch(e => alert(e.error))
     }
-    
-    
+        
     getMinDate = () => {
         let MinDate = new Date();
         let dd = MinDate.getDate();

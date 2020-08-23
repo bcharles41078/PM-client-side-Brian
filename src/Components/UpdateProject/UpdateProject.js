@@ -58,7 +58,7 @@ class UpdateProject extends Component {
         }
 
         myDate = yyyy + '-' + mm + '-' + dd;
-
+        
         return myDate;
     }
 
