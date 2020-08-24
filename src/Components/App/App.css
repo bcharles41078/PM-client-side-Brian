@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+ 
 
 .App__header {
   background-color: #282c34;
@@ -20,6 +21,8 @@
 main{
   padding-top: 10vw;
 }
+
+
 
 #pm-pic{
   width: 70%;

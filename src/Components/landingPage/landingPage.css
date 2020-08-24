@@ -12,7 +12,8 @@
 .landingpage{
     margin-right: auto;
     margin-left: auto;
-    width: 80vw; 
+    width: 80vw;
+    font-weight: 700; 
 }
 
 @media screen and (min-width: 768px) {

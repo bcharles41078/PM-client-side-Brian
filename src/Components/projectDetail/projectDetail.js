@@ -47,6 +47,7 @@ export default function detail(props) {
         </div>
         <div className='button-wrapper'>
             <button id='edit-button' onClick={()=>props.handleUpdateProject(props.project.id)}>Edit Project</button>
+            <button id='delete-button' onClick={()=>props.handleDeleteProject(props.project.id)}>Complete Project</button>
             <button id='delete-button' onClick={()=>props.handleDeleteProject(props.project.id)}>Delete Project</button>
         </div>
         </div>

@@ -34,6 +34,7 @@ handleGetProjects = () => {
 
         .then(res => res.json())
         .then(data => this.setState({ projects: data }))
+
 }
 
 handleUpdateProject = (detail_id, projects = this.state.projects) => {
@@ -64,6 +65,7 @@ handleDeleteProject = (detail_id) => {
 }
 
 render() {
+    console.log(this.state.projects)
     return (
         <>
             <section className='buttons'>
