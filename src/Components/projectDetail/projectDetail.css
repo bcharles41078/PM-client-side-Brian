@@ -23,11 +23,7 @@
     flex-direction: column;
 }
 
-#edit-button{
-    background-color: blue;
-    color: white;
-    margin-bottom: .75vw;
-}
+
 
 .red{
     font-weight: 800;
@@ -41,12 +37,42 @@
 #delete-button{
     background-color: blue;
     color: white;
-    margin-bottom: .75vw;
-}
+    
+} 
 
 #complete-button{
     background-color: blue;
     color: white;
-    margin-bottom: .75vw;
+    margin-bottom: 3vw;
 }
 
+#edit-button{
+    background-color: blue;
+    color: white;
+    margin-bottom: 3vw;
+}
+
+@media screen and (min-width: 768px) {
+    #complete-button{
+        background-color: blue;
+        color: white;
+        margin-bottom: 1.5vw;
+    }
+    
+    #edit-button{
+        background-color: blue;
+        color: white;
+        margin-bottom: 1.5vw;
+    }
+}
+  
+  
+@media screen and (min-width: 1024px) {
+    #complete-button{
+        margin-bottom: 1vw;
+    }
+    
+    #edit-button{
+        margin-bottom: 1vw;
+    }
+}
