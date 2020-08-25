@@ -47,7 +47,7 @@ handleUpdateProject = (detail_id, projects = this.state.projects) => {
 
 
 handleDeleteProject = (detail_id) => {
-    fetch(`${config.API_ENDPOINT}/projects`, {
+    fetch(`${API_ENDPOINT}/projects`, {
         method: 'DELETE',
         headers: {
             'content-type': 'application/json',
@@ -61,11 +61,9 @@ handleDeleteProject = (detail_id) => {
                 this.handleGetProjects();
             }
         })
-
 }
 
 render() {
-    console.log(this.state.projects)
     return (
         <>
             <section className='buttons'>

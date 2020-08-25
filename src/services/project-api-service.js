@@ -65,7 +65,7 @@ const ProjectApiService = {
         })
             .then(res => {
                if (!res.ok){
-                console.log(res)
+                   
                }
             })
             

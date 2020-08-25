@@ -8,8 +8,10 @@
     width: 60vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     align-items: center;
-    background-color: white;
+    background-color: rgb(247, 247, 216);
 }
 
 .detail-box{
@@ -22,7 +24,9 @@
 }
 
 #edit-button{
-    margin-bottom: 2vw;
+    background-color: blue;
+    color: white;
+    margin-bottom: .75vw;
 }
 
 .red{
@@ -35,5 +39,14 @@
 }
 
 #delete-button{
-
+    background-color: blue;
+    color: white;
+    margin-bottom: .75vw;
 }
+
+#complete-button{
+    background-color: blue;
+    color: white;
+    margin-bottom: .75vw;
+}
+

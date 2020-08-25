@@ -40,7 +40,7 @@ class ProjectAdd extends Component {
     getMinDate = () => {
         let MinDate = new Date();
         let dd = MinDate.getDate();
-        let mm = MinDate.getMonth() + 1;
+        let mm = MinDate.getMonth() - 1;
         let yyyy = MinDate.getFullYear();
 
         if (dd < 10) {

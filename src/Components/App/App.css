@@ -25,13 +25,13 @@ main{
 
 
 #pm-pic{
-  width: 70%;
-  height: 45%;
+  width: 80%;
+  height: 40%;
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 25vw;
+  margin-top: 50vw;
   position: absolute;
   z-index: -300;
   filter: opacity(20%)
@@ -39,8 +39,8 @@ main{
 
 @media screen and (min-width: 768px) {
   #pm-pic {
-      width: 65%;
-      height: 50%;
+      width: 80%;
+      height: 60%;
       margin-top: 10vw;
   }}
 

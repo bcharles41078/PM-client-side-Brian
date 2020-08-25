@@ -6,6 +6,7 @@
 
 .Input,
 .Textarea {
+  background-color: rgb(247, 247, 216);
   border: 1px solid #ddd;
   display: block;
   font-size: 1.1em;
@@ -26,8 +27,9 @@
 }
 
 .Button {
-  order: 1px solid #aaa;
-  background-color: #eee;
+  border: 1px solid #aaa;
+  background-color: blue;
+  color: white;
   font-size: 1.1em;
   border-radius: 4px;
   padding: 8px 12px;
