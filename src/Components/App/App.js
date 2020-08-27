@@ -12,6 +12,7 @@ import UpdateProject from '../UpdateProject/UpdateProject'
 
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import SingleProject from '../singleProject/singleProject'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import TokenService from '../../services/token-service'
 import { UserProvider } from '../../context/UserContext';
@@ -76,6 +77,12 @@ class App extends Component {
               path={'/addproject'}>
               <ProjectAdd history={this.history} test={'test value'} />
             </Route>
+
+            <Route
+              path={'/singleproject'}>
+              <SingleProject history={this.history} test={'test value'} project={this.state.project} />
+            </Route>
+            
             <PrivateRoute
               path={'/updateproject'}
               component= {() => <UpdateProject history={this.history} project={this.state.project}/>}

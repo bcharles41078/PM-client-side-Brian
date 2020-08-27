@@ -1,5 +1,7 @@
 import React from 'react'
 import './projectDetail.css'
+import { Link } from 'react-router-dom'
+
 
 export default function detail(props) {
     
@@ -9,7 +11,7 @@ export default function detail(props) {
     let dd = myDate.getDate();
     let mm = myDate.getMonth() + 1;
     let yyyy = myDate.getFullYear();
-    
+     
     if (dd < 10) {
         dd = '0' + dd
     }
@@ -41,7 +43,7 @@ export default function detail(props) {
     return (
         <div className='detail-wrapper'>
         <div className='detail-box'>
-            <h3 className={textColor}>{props.project.title}</h3>
+        <h3 className={textColor} onClick={()=>props.handleGoToNotes(props.project.id)}>{props.project.title}</h3>
             <p className={textColor}>{props.project.project_description}</p>
             <p className={textColor}>{myDate}</p> 
         </div>

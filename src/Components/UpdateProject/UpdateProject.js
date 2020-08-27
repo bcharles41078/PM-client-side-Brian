@@ -131,6 +131,7 @@ class UpdateProject extends Component {
                         type='submit'>
                         Submit
                     </Button>
+                    
                 </form>
             </section>
         )
