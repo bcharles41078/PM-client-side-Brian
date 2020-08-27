@@ -74,6 +74,10 @@ class SingleProject extends Component {
                     <p className={this.state.textColor}>{this.props.project.project_description}</p>
                     <p className={this.state.textColor}>{this.makeMyDate()}</p>
                 </div>
+                <div className='note-box'>
+                    <h4>Notes</h4>
+                    <p>note 1 for project</p>
+                </div>
                 <form className='notes' type='submit'>
                     <label htmlfor='addNote'>Note Entry</label>
                     <Textarea id='addNote'></Textarea>
