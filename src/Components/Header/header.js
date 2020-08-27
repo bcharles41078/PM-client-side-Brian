@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./header.css";
 import TokenService from "../../services/token-service";
 
 const NewHeader = (props) => {

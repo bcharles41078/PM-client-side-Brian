@@ -1,5 +1,7 @@
 import './singleProject.css'
 import TokenService from '../../services/token-service'
+import { Button, Textarea } from '../Utils/Utils' 
+
 const { Component } = require("react")
 const React = require('react')
 const { Link } = require('react-router-dom')
@@ -72,6 +74,11 @@ class SingleProject extends Component {
                     <p className={this.state.textColor}>{this.props.project.project_description}</p>
                     <p className={this.state.textColor}>{this.makeMyDate()}</p>
                 </div>
+                <form className='notes' type='submit'>
+                    <label htmlfor='addNote'>Note Entry</label>
+                    <Textarea id='addNote'></Textarea>
+                    <Button type='submit'>Add Note</Button>
+                </form>
             </>
         )
     }
